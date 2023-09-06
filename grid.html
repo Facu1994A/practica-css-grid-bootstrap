@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!--     <style>
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .one {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            background-color: red;
+        }
+
+        .two {
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+            background-color: blue;
+        }
+
+        .three {
+            grid-column: 1;
+            grid-row: 2 / 5;
+            background-color: green;
+        }
+
+        .four {
+            grid-column: 3;
+            grid-row: 3;
+            background-color: blueviolet;
+        }
+
+        .five {
+            grid-column: 2;
+            grid-row: 4;
+            background-color: aquamarine;
+        }
+
+        .six {
+            grid-column: 3;
+            grid-row: 4;
+            background-color: chocolate;
+        }
+    </style> -->
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto 1fr 50px;
+            gap: 10px;
+            height: 100vh;
+        }
+
+        .navbar {
+            grid-column: 1 / 5;
+            grid-row: 1;
+            background-color: blueviolet;
+
+        }
+
+        .main-content {
+            grid-column: 1 / 4;
+            grid-row: 2;
+            /*             background-color: red; */
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+            gap: 10px;
+            overflow: scroll;
+        }
+
+        .barra-lateral {
+            grid-column: 4;
+            grid-row: 2;
+            background-color: blue;
+
+        }
+
+        .footer {
+            grid-column: 1 / 5;
+            grid-row: 3;
+            background-color: green;
+
+        }
+
+        .seccion {
+            display: flex;
+            gap: 5px;
+            border-bottom: 2px solid;
+        }
+
+        .textos {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media screen and (max-width: 768px) {
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+
+            .contenedor {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: auto 1fr 1fr 50px;
+                gap: 10px;
+                height: 100vh;
+            }
+
+            .navbar {
+                grid-column: 1 / 5;
+                grid-row: 1;
+                background-color: blueviolet;
+
+            }
+
+            .main-content {
+                grid-column: 1 / 5;
+                grid-row: 2;
+                background-color: red;
+
+            }
+
+            .barra-lateral {
+                grid-column: 1/ 5;
+                grid-row: 3;
+                background-color: blue;
+
+            }
+
+            .footer {
+                grid-column: 1 / 5;
+                grid-row: 3;
+                background-color: green;
+
+            }
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--     <div class="contenedor">
+        
+        <div class="two">Two</div>
+        <div class="one">One</div>
+        <div class="three">Three</div>
+        <div class="four">Four</div>
+        <div class="five">Five</div>
+        <div class="six">Six</div>
+    </div> -->
+
+    <div class="contenedor">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section class="seccion">
+                <img src="https://xeelha.files.wordpress.com/2017/09/img_1777.jpg" height="100" width="200"  alt="" >
+
+                <div class="textos">
+                    <h3>Imagen mas votada del mes de agosto</h3>
+                    <footer>
+                        <i>Actualizado el 23/08/2023</i>
+                    </footer>
+                </div>
+            </section>
+
+            <section class="seccion">
+                <img src="https://xeelha.files.wordpress.com/2017/09/img_1777.jpg" height="100" width="200" alt="" >
+
+                <div class="textos">
+                    <h3>Imagen mas votada del mes de agosto</h3>
+                    <footer>
+                        <i>Actualizado el 23/08/2023</i>
+                    </footer>
+
+                </div>
+            </section>
+            <section class="seccion">
+                <img src="https://xeelha.files.wordpress.com/2017/09/img_1777.jpg" height="100" width="200" alt="" >
+
+                <div class="textos">
+                    <h3>Imagen mas votada del mes de agosto</h3>
+                    <footer>
+                        <i>Actualizado el 23/08/2023</i>
+                    </footer>
+
+                </div>
+            </section>
+            <section class="seccion">
+                <img src="https://xeelha.files.wordpress.com/2017/09/img_1777.jpg" height="100" width="200" alt="" >
+
+                <div class="textos">
+                    <h3>Imagen mas votada del mes de agosto</h3>
+                    <footer>
+                        <i>Actualizado el 23/08/2023</i>
+                    </footer>
+
+                </div>
+            </section>
+            <section class="seccion">
+                <img src="https://xeelha.files.wordpress.com/2017/09/img_1777.jpg" height="100" width="200" alt="" >
+
+                <div class="textos">
+                    <h3>Imagen mas votada del mes de agosto</h3>
+                    <footer>
+                        <i>Actualizado el 23/08/2023</i>
+                    </footer>
+
+                </div>
+            </section>
+        </main>
+        <aside class="barra-lateral">
+            Barra Lateral
+        </aside>
+        <footer class="footer">
+            Footer
+        </footer>
+    </div>
+    <!-- JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
